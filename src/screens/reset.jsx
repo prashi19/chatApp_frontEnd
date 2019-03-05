@@ -1,6 +1,6 @@
 import React from "react";
 import Snackbar from '@material-ui/core/Snackbar';
-import { resetPassword } from "../Services/userServices";
+import { resetPassword } from "../services/userServices";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 export default class ResetPassword extends React.Component {

@@ -24,88 +24,131 @@
 }
 
 .InputFiled {
-  background-image: url("../src/assets/nostalgic_blue_background_05_hd_picture_169783.jpg");
+  background-image: url("../src/assets/sky.jpg");
   height: 100%;
   min-height: 10vh;
   background-position: center;
   background-size: cover;
   position: absolute;
-  top:0%;
+  top: 0%;
   left: 0%;
-  right:0%;  
+  right: 0%;
 }
-.Login{
-  background-image: url("../src/assets/nostalgic_blue_background_05_hd_picture_169783.jpg");
+.Login {
+  background-image: url("../src/assets/sky.jpg");
   height: 100%;
   background-position: center;
   background-size: cover;
   position: absolute;
   min-height: 10vh;
-  top:0%;
+  top: 0%;
   left: 0%;
-  right:0%;  
-
+  right: 0%;
 }
-#header{
+#header {
   align-items: center;
   justify-content: center;
-  display:flex;
+  display: flex;
   margin-bottom: 3%;
 }
-#email{
-
+#email {
   align-items: center;
   min-height: 10vh;
   justify-content: center;
   text-align: center;
-  display:flex;
-
+  display: flex;
 }
-#password{
+#password {
   align-items: center;
   justify-content: center;
   text-align: center;
-  display:flex;
+  display: flex;
   min-height: 10vh;
 }
-#login{
+#login {
   align-items: center;
   justify-content: center;
   text-align: center;
-  display:flex;
+  display: flex;
   min-height: 10vh;
   border-radius: 20px;
   padding: 6px 26px;
 }
 
-input{
+input {
   padding: 6px 38px;
   border-radius: 20px;
   margin-bottom: 3%;
 }
-button{
+button {
   align-items: center;
   justify-content: center;
   text-align: center;
-  display:flex;
+  display: flex;
   margin-left: 50%;
   border-radius: 20px;
   padding: 6px 26px;
 }
 
-#register{
+#register {
   align-items: center;
-  justify-content:center;
-  text-align:center;
-  display:flex;
+  justify-content: center;
+  text-align: center;
+  display: flex;
   border-radius: 20px;
   padding: 6px 26px;
 }
-label::after {
+label1::after {
   color: #cb2431;
   content: "*";
   padding-left: 5px;
 }
+
+.logo {
+  background-image: url("../src/assets/index.png");
+  background-size: cover;
+  position: absolute;
+  margin-left: -35%;
+  margin-top: 0%;
+}
+#logout{
+  text-align: right;
+}
+.head {
+  text-align: center;
+  align-items: center;
+  margin-inline-start: 250px;
+  margin-inline-end: 250px;
+}
+
+#Content {
+  margin-top: -47%;
+  margin-left: 25%;
+  width: 100%;
+  border: 2px solid red;
+}
+
+.dashButton {
+  width: 100%;
+  display: right;
+  align-items: right;
+  justify-content: right;
+}
+/* Control the left side */
+.left {
+  left: 0;
+  width: 25%;
+  margin-top: 6.25%;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  margin-top: 4%;
+  margin-top: 6.25%;
+  width: 75%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -114,5 +157,156 @@ label::after {
     transform: rotate(360deg);
   }
 }
+#logoutbtn{
 
+position: relative;
+    left: 780px;
 
+}
+
+#welcome{
+  position: relative;
+  left:205px;
+}
+#box{
+  height: 475px;
+  width: 1024px;
+  position: relative;
+  top: -581px;
+  right: 24px;
+  left: 219px;
+  border: 2px solid rgb(45, 11, 238);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
+ 
+  /* margin-left: 193px;
+  /* background-image:url('./assets/chat.jpg') ; 
+  border: 2px solid royalblue;
+  background-color:black; 
+  /* padding-left: 10px; 
+  
+  padding-left:0px;
+  padding-right: 20px;
+  overflow: scroll; */
+}
+.text{
+  padding: 20px 0px;
+  border-radius: 20px;
+  margin-bottom: 3%;
+  margin-top:0px;
+  padding-bottom:10px;
+  margin-right:650px;
+  
+}
+
+.SlideBar {
+   width: 15%; 
+  padding-top: 60px;
+  padding-bottom: 11px;
+  background-color: lightblue;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* #top{
+ 
+  width:100%;
+  height:20px;
+  background-color: black;
+} */
+
+.split {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  width:20%;
+}
+
+/* Control the right side */
+.right {
+    width:100%;
+  right: 0;
+}
+.SlideBar {
+  background-image: url("../src/assets/bcd68f.jpg");
+  width: 100%; 
+ padding-top: 10px;
+ padding-bottom: 11px;
+ background-color: lightblue;
+ overflow-y: scroll;
+ overflow-x: hidden
+} 
+.box{
+  background-image: url("../src/assets/bcd68f.jpg");
+  margin-top:50px;
+  margin-right:50px;   
+  margin-left: 260px;  
+  width: 958px;
+  height: 300px;  
+  padding: 30px;
+  border: 2px solid black;
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+.write{
+  box-sizing: content-box;
+  font: inherit;
+    color: currentColor;
+  width:100%;
+  -webkit-tap-highlight-color: antiquewhite;
+
+}
+.userinfo{
+  margin-top:50px;
+}
+
+.box1 {
+  width: 500px;
+  margin: 20px auto;
+  right:50%;
+  background: cornflowerblue;
+  padding: 20px;
+  text-align: right;
+  font-weight: 900;
+  color: whitesmoke;
+  font-family: arial;
+  position: relative;
+  left: 25%;
+  }
+  
+  .box2 {
+    width: 500px;
+    margin: 20px auto;
+    background: cornflowerblue;
+    padding: 20px;
+    text-align: left;
+    font-weight: 900;
+    color: whitesmoke;
+    font-family: arial;
+    position: relative;
+    left: -25%;
+    }
+
+    #user{
+      margin-left:200px;
+      width:75%;
+      margin-top: 90px;
+
+    }
+    #butt{
+
+      margin-bottom:0px;
+      margin-left: 500px;
+    }
+    body::-webkit-scrollbar {
+      width: 1em;
+  }

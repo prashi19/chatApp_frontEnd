@@ -9,13 +9,13 @@ return axios.post('/login', data);
 }
 
 export function resetPassword(Password, token) {
-return axios.post(`/resetpassword/${token}`,
+return axios.post('/resetpassword/${token}',
 { 'Password': Password },
 { headers: { 'token': token } })
 }
 
 export function forgotPassword(userName) {
-axios.post('/verifyUser',
+axios.post('/forgot',
 {
 'Email': userName,
 })
@@ -28,3 +28,5 @@ console.log(err);
 alert('User Not Found.');
 });
 }
+
+

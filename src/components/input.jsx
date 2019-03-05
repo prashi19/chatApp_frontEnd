@@ -16,8 +16,7 @@ export default class Inputs extends Component {
         this.setState({ Password: Password });
     }
     render() {
-      return (
-        
+      return (        
         <input type={this.props.type}
             className={this.props.className}
             id={this.props.id}
