@@ -17,23 +17,21 @@ export default class SampleAppBar extends Component {
         <AppBar position="fixed" color="default">
           <Toolbar className="head">
             <div id="welcome">
-              <h1>ChatApp</h1>            
+              <h1>ChatApp</h1>
             </div>
             <div className="aa logo">
               <img src={logo} alt="Logo" width="120" height="80" />
             </div>
-            
+
             <div id="logoutbtn">
-            <Buttons 
-            label={"logout"}
-            color={"primary"}
-            title={"logout"}
-            onClick={this.logoutClick}
-          />
-          </div>
+              <Buttons
+                label={"logout"}
+                color={"primary"}
+                title={"logout"}
+                onClick={this.logoutClick}
+              />
+            </div>
           </Toolbar>
-          
-          
         </AppBar>
       </div>
     );

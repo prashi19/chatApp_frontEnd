@@ -16,11 +16,16 @@ export default class Login extends Component {
         this.registrationclick = this.registrationclick.bind(this)
         this.forgetClick = this.forgetClick.bind(this)
     }
-
+     /**
+     * Takes the registered user emailID
+     */
     onChange(e) {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value })
     }
+     /**
+     * it will submit the login page and checks all the conditions
+     */
     handleSubmit = event => {
         event.preventDefault();
         if (!this.state.Username) {
@@ -69,10 +74,16 @@ export default class Login extends Component {
                 });
         }
     }
+     /**
+     * redirect or trigger to registration page
+     */
     registrationclick = e => {
         e.preventDefault();
         this.props.history.push('/register');
     };
+     /**
+     * redirect or trigger to forgotPasswordPage
+     */
     forgetClick = e => {
         e.preventDefault();
         this.props.history.push('/forgot');

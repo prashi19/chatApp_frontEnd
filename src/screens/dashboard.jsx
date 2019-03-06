@@ -1,3 +1,10 @@
+/*************************************************************************************
+ *  @Purpose        : To create dashboard for displaying chatMessages and users list.
+ *  @file           : dashboard.jsx
+ *  @author         : PRASHANTH S
+ *  @version        : v0.1
+ *  @since          : 05-03-2019
+ ************************************************************************************/
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Appbar from "../components/appBar";
@@ -6,6 +13,7 @@ import "../App.css";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import io from "socket.io-client";
+//import DashBoard from './dashboard';
 const socket = io.connect("http://localhost:4000");
 export default class DashBoard extends Component {
   constructor(props) {
@@ -17,7 +25,7 @@ export default class DashBoard extends Component {
       MsgDisplay: "",
       Receiver: "",
       Sender: "",
-      msg: []
+      msg: [],
     };
   }
   componentDidMount() {
@@ -62,6 +70,11 @@ export default class DashBoard extends Component {
    */
   handleSubmit = event => {
     event.preventDefault();
+    if(!this.state.message){
+      this.props.history.push("/dashboard");
+    }else if (this.state.recieverId===false)
+    this.props.history.push("/dashboard");
+    else{
     /**
      * Get the sender who has login to the application
      **/
@@ -80,8 +93,7 @@ export default class DashBoard extends Component {
       message: "",
       anchorEl: null
     });
-    //  this.setState({ MsgDisplay: this.state.message })
-    // this.handleClick = this.handleClick.bind(this);
+  }
   };
   /**
    * Takes the users list
@@ -90,7 +102,7 @@ export default class DashBoard extends Component {
     this.setState({ anchorEl: null });
     let Receiver = event.target.textContent;
     this.setState({ Receiver: Receiver });
-    localStorage.setItem("receiver",Receiver)
+    localStorage.setItem("receiver", Receiver);
   };
   /**
    * redirect to login page
@@ -107,14 +119,12 @@ export default class DashBoard extends Component {
             key.recieverId === this.state.Receiver ? (
               <div className="box1">
                 <label>{key.senderId}:</label>
-                <div>{key.message}</div>
-                {/* <MenuItem >{key.senderId}:{key.message}</MenuItem> */}
+                <div>{key.message}</div>               
               </div>
             ) : null
           ) : null}
           {key.senderId === this.state.Receiver ? (
-            <div className="box2">
-              {/* <MenuItem >{key.senderId}:{key.message}</MenuItem> */}
+            <div className="box2">            
               <label> {key.senderId}:</label>
               <div>{key.message} </div>
             </div>
@@ -134,77 +144,76 @@ export default class DashBoard extends Component {
       }
     });
     const msgdis = this.state.msg.map(key => {
-      // console.log(
-      //   "key.senderId === this.state.senderId",
-      //   key.senderId === this.state.senderId
-      // );
       return (
         <div>
           {key.recieverId === localStorage.getItem("receiver") ? (
-            key.senderId===this.state.Sender ?(
-            <div className="box1">
-              <label>{key.senderId}:</label>
-              <div>{key.message}</div>
-              {/* <MenuItem >{key.senderId}:{key.message}</MenuItem> */}
-            </div>
-          ) : null
-          ):null}
-          {key.senderId===this.state.Receiver ?(
+            key.senderId === this.state.Sender ? (
+              <div className="box1">
+                <label>{key.senderId}:</label>
+                <div>{key.message}</div>
+              </div>
+            ) : null
+          ) : null}
+          {key.senderId === this.state.Receiver ? (
             <div className="box2">
               <label>{key.senderId}:</label>
               <div>{key.message}</div>
             </div>
-          ):null}
+          ) : null}
         </div>
       );
     });
     return (
       <div>
-       <Appbar props={this.props} />
-      <div>
+        <Appbar props={this.props} />
+        <div>
           <div className="split left">
-          <div className="SlideBar">
-              <label><u>Users List:-</u></label>
-              <div>
-                  {onlineUser}
-              </div>
+            <div className="SlideBar">
+              <label>
+                <u>Users List:-</u>
+              </label>
+              <div>{onlineUser}</div>
+            </div>
           </div>
+          <div id="user">
+            {" "}
+            <p>
+              <h4>
+                <u>user id</u>:-{localStorage.getItem("Sender")}
+              </h4>
+            </p>
           </div>
-         <div id="user"> <p><h4><u>user id</u>:-{localStorage.getItem('Sender')}</h4></p></div>
           <div className="box">
-              <center>To:-  {this.state.Receiver}</center>
-              {msg}
-              {msgdis}
-              {/* <MessageDisplay
-                  MsgArray={this.state.MsgArray}
-                  recieverId={this.state.Receiver}
-              /> */}
+            <center>To: <u>{this.state.Receiver}</u></center>
+            {msg}
+            {msgdis}
           </div>
-      </div>
-      <div className="write">
+        </div>
+        <div className="write">
           <TextField
-              type="textfield"
-              value={this.state.message}
-              placeholder="Write a Message ................."
-              onChange={this.handleMessage}
-              variant="filled"
-              InputProps={{
-                  disableUnderline: true
-              }}
+            type="textfield"
+            value={this.state.message}
+            placeholder="type here...!!"
+            onChange={this.handleMessage}
+            variant="filled"
+            InputProps={{
+              disableUnderline: true
+            }}
           />
-      </div>
-      <div id="butt">
+        </div>
+        <div id="butt">
           <Button
-              id="send"
-              type="submit"
-              variant="contained"
-              color="primary"
-              title="click on send"
-              onClick={this.handleSubmit}>
-              send
-              </Button>
+            id="send"
+            type="submit"
+            variant="contained"
+            color="primary"
+            title="click on send"
+            onClick={this.handleSubmit}
+          >
+            send
+          </Button>
+        </div>
       </div>
-</div>
     );
   }
 }
